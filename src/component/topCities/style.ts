@@ -24,6 +24,7 @@ export const TopCitiesStyle = styled.div`
     grid-gap:10px;
         } 
         .topcity{
+           cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: center;
