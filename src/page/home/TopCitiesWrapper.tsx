@@ -27,7 +27,7 @@ const TopCitiesWrapper = ({index,item,onBtnClick,showBtn}:props) => {
   <MdLocationOn className='location_icon' /> {item?.unique_name}
 </p>
 <p className='description'>Avec la carte Avantage, voyager en train c'est bon...</p>
-{showBtn? <Custombutton text={'View more'} bg='#8de8fe' borderRadius='5px' height='35px' margin='20px 0px 0px 0px' onClick={()=>onBtnClick(item?.unique_name)}/>
+{showBtn? <Custombutton text={'View more'} bg='#8de8fe' color='white' borderRadius='5px' height='35px' margin='20px 0px 0px 0px' onClick={()=>onBtnClick(item?.unique_name)}/>
   : null}
 </div>
     </div>

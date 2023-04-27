@@ -41,6 +41,7 @@ z-index: ${props => props.isFocused ? 99999 : 1};
         border-radius: 50px;  
         @media (max-width: 768px) {
             width: 100%;
+            height: 100%;
         } 
     }
     .searchlist{

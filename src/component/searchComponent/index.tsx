@@ -20,9 +20,11 @@ const SearchComponent = ({ onFocus, searchResult, isFocused, onHandleChange }: s
         {isFocused ? null : <h4>Search your cities and much more...</h4>}
         <div className='input_search_wrapper'>
           <CustomInput placeholder='A destination,request...' color='#0c131f' onFocus={onFocus} onChange={onHandleChange} />
+          <div>
           <Custombutton width='56px' height='56px' bg='#8de8fe' borderRadius={'50%'} color='white'>
             <BiSearch fontSize={30} />
           </Custombutton>
+          </div>
         </div>
             {!(isFocused && searchResult?.length) ? null : <div className='searchlist'>
               <ul>
