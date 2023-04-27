@@ -11,6 +11,7 @@ export type searchResutlProps = {
 export type searchProps = {
     onFocus?: (e: any) => void;
     isFocused?: boolean;
+    id?: string;
     onSearchwrapperClick?: any;
     onHandleChange?: (e: any) => void;
     loading?: boolean;

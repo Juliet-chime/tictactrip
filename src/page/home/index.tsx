@@ -11,6 +11,7 @@ const HomePage = () => {
   const [searchResults, setSearchResults] = useState([])
   const [isFocused, setIsFocused] = useState(false)
   const [citiesLoading, setCitiesLoading] = useState(false)
+  const [id, setId] = useState('')
 
   const onHandleFocus = (e: { target: any }) => {
     if (e.target) {
@@ -47,8 +48,10 @@ const getTopCities = async () => {
   setCitiesLoading(true)
         try {
 apiRequest(apiRoute.popularCities(), 'get', null).then((response: any) => {
-  setTopCities(response.data)
+  const data = response.data
+  setTopCities(data)
   setCitiesLoading(false)
+  setId(data[0].unique_name)
 })
   }
    catch(err){
@@ -62,7 +65,7 @@ getTopCities()
     <HomeStyleWrapper isFocused={isFocused}>
       {isFocused ? <div className='overlay' onClick={handleFocus} /> : null}
       <div className='searchcomponent_wrapper'>
-        <SearchComponent onFocus={onHandleFocus} isFocused={isFocused} onHandleChange={onHandleChange} searchResult={searchResults} />
+        <SearchComponent onFocus={onHandleFocus} isFocused={isFocused} onHandleChange={onHandleChange} searchResult={searchResults} id={id}/>
       </div>
       <TopCities label='Top Cities' topCities={topCities} loading={citiesLoading} showBtn />
     </HomeStyleWrapper>

@@ -4,8 +4,17 @@ import { SearchWrapper } from './styles'
 import Custombutton from '../button';
 import { SearchList } from './SearchList';
 import { searchProps } from './typeProps';
+import { useNavigate } from 'react-router-dom';
 
-const SearchComponent = ({ onFocus, searchResult, isFocused, onHandleChange }: searchProps) => {
+const SearchComponent = ({ onFocus, searchResult, isFocused, onHandleChange,id }: searchProps) => {
+
+  const navigate = useNavigate()
+
+  const onHandleClick = () => {
+   if(id){
+    navigate(`/city/${id}`)
+   }
+  }
 
   return (
     <SearchWrapper
@@ -21,7 +30,7 @@ const SearchComponent = ({ onFocus, searchResult, isFocused, onHandleChange }: s
         <div className='input_search_wrapper'>
           <CustomInput placeholder='A destination,request...' color='#0c131f' onFocus={onFocus} onChange={onHandleChange} />
           <div>
-          <Custombutton width='56px' height='56px' bg='#8de8fe' borderRadius={'50%'} color='white'>
+          <Custombutton width='56px' height='56px' bg='#8de8fe' borderRadius={'50%'} color='white' onClick={onHandleClick}>
             <BiSearch fontSize={30} />
           </Custombutton>
           </div>
