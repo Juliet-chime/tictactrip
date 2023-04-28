@@ -6,7 +6,7 @@ export const SearchWrapper = styled(motion.div) <searchProps>`
 width: 70%;
 margin: auto;
 display: flex;
-padding-top: 38%;
+padding-top:${props => props.isFocused ? '5%' : '38%'} ;
 left: ${props => props.isFocused ? "15%" : null};
 position: ${props => props.isFocused ? "absolute" : null};
 z-index: ${props => props.isFocused ? 99999 : 1};
@@ -14,6 +14,7 @@ z-index: ${props => props.isFocused ? 99999 : 1};
     width: ${props => props.isFocused ? '79%' : '95%'};
     left: ${props => props.isFocused ? '0' : null};
     right: ${props => props.isFocused ? '0' : null};
+    padding-top: 13%;
 }
 
 .search_cities_wrapper {
@@ -22,6 +23,31 @@ z-index: ${props => props.isFocused ? 99999 : 1};
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    .left_transparentoverlay{
+        width: 15%;
+        height: 100%;
+        background-color: transparent;
+        position: ${props => props.isFocused ? "absolute" : null};
+        z-index: ${props => props.isFocused ? 9999999 : 1};
+        top: 0;
+        left: 0;
+        @media (max-width: 768px) {
+            width: 0%;
+        }
+    }
+    .right_transparentoverlay{
+        width: 15%;
+        height: 100%;
+        background-color: transparent;
+        position: ${props => props.isFocused ? "absolute" : null};
+        z-index: ${props => props.isFocused ? 9999999 : 1};
+        top: 0;
+        right: 0;
+        @media (max-width: 768px) {
+            width: 0%;
+        }
+    }
     h4 {
         color: white;
         font-size: 32px;
@@ -38,16 +64,16 @@ z-index: ${props => props.isFocused ? 99999 : 1};
         justify-content: center;
         width: 70%;
         height: 50px;
-        border-radius: 50px;  
+        border-radius: 50px; 
         @media (max-width: 768px) {
             width: 100%;
-            height: 100%;
         } 
     }
     .searchlist{
         width: 70%;
         margin-top:16px;
-        height:400px;
+        min-height:50px;
+        max-height: 400px;
         background-color: white;
         overflow-y:scroll;
         border-radius: 10px;
@@ -59,6 +85,7 @@ z-index: ${props => props.isFocused ? 99999 : 1};
             align-items: center;
             gap: 1rem;
             padding: 0.5rem;
+            cursor: pointer;
             .city_icon{
             font-size: 20px;
             }

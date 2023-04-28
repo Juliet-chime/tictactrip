@@ -5,13 +5,14 @@ export interface searchResultType {
 }
 
 export type searchResutlProps = {
-    item: searchResultType
+    item: searchResultType;
 }
 
 export type searchProps = {
     onFocus?: (e: any) => void;
     isFocused?: boolean;
     id?: string;
+    value?: string;
     onSearchwrapperClick?: any;
     onHandleChange?: (e: any) => void;
     loading?: boolean;

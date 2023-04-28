@@ -1,9 +1,17 @@
 import { GiModernCity } from 'react-icons/gi'
 import { searchResutlProps } from './typeProps'
+import { useNavigate } from 'react-router-dom'
 
-export const SearchList = ({ item }: searchResutlProps) => {
+export const SearchList = ({ item}: searchResutlProps) => {
+
+  const navigate = useNavigate()
+
+  const onHandleClick = (id:string) => {
+    navigate(`/city/${id}`)
+  }
+
   return (
-    <li className='searchitem'>
+    <li className='searchitem' onClick={()=>onHandleClick(item?.unique_name)}>
       <div>
         <GiModernCity className='city_icon' />
       </div>
