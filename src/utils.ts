@@ -1,7 +1,6 @@
 export const capitalizeWord = (str: any) => {
-    if (str.length) {
-        let transformWord = str[0].toUpperCase() + str.substring(1);
+    if (str?.length) {
+        let transformWord = str[0].toUpperCase() + str.substring(1).toLowerCase();
         return transformWord;
     }
-
 }
