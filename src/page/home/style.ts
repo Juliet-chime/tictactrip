@@ -21,5 +21,11 @@ position: relative;
     background-size: cover;
     background-position: center center;
     object-fit: contain;
+    button{
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
 } 
 `

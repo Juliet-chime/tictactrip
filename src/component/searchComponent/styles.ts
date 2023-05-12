@@ -6,7 +6,7 @@ export const SearchWrapper = styled(motion.div) <searchProps>`
 width: 70%;
 margin: auto;
 display: flex;
-padding-top:${props => props.isFocused ? '5%' : '38%'} ;
+padding-top:${props => props.isFocused ? '5%' : '30%'} ;
 left: ${props => props.isFocused ? "15%" : null};
 position: ${props => props.isFocused ? "absolute" : null};
 z-index: ${props => props.isFocused ? 99999 : 1};
